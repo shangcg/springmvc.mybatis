@@ -20,9 +20,14 @@ public class UserController {
 	
 	@RequestMapping("/showUser")
 	public String toIndex(HttpServletRequest request,Model model){
-		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
-		model.addAttribute("user", user);
+		try {
+			int userId = Integer.parseInt(request.getParameter("id"));
+			User user = this.userService.getUserById(userId);
+			model.addAttribute("user", user);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
 		return "showUser";
 	}
 	

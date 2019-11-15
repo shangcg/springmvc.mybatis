@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shangcg.dao.IUserDao" >
 
+
+  <!--
+    CREATE TABLE user_t(
+    id BIGINT(20) not null,
+    username VARCHAR(1024),
+    pwd VARCHAR(1024),
+    PRIMARY KEY (id)
+    )
+
+    INSERT INTO `user_t`(`id`, `username`, `pwd`) VALUES (1111, '张三', 'aasd');
+  -->
+
   <resultMap id="BaseResultMap" type="com.shangcg.pojo.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
